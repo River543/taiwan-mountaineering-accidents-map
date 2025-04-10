@@ -43,7 +43,8 @@
             zoomControl:false, maxZoom:28, minZoom:1
         }).fitBounds([[21.774350726150395,117.92130450382658],[25.617443845324274,123.66878751687679]]);
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        // map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        map.attributionControl.setPrefix('<a href="https://data.gov.tw/dataset/170544" target="_blank">台灣內政部消防署</a> &middot; <a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         // remove popup's row if "visible-with-data"
         function removeEmptyRowsFromPopupContent(content, feature) {
@@ -79,8 +80,11 @@
             this.update();
             return this._div;
         };
+        // title.update = function () {
+        //     this._div.innerHTML = '<h2>Taiwan Mountaineering Accidents Map in 2019-2021</h2>';
+        // };
         title.update = function () {
-            this._div.innerHTML = '<h2>Taiwan Mountaineering Accidents Map in 2019-2021</h2>';
+            this._div.innerHTML = '<h2>台灣山域意外事故 2019-2021</h2>';
         };
         title.addTo(map);
         var zoomControl = L.control.zoom({
@@ -412,7 +416,7 @@
         bounds_group.addLayer(layer_MtAccident20192021_3);
         map.addLayer(layer_MtAccident20192021_3);
         var overlaysTree = [
-            {label: 'Mt Accident 2019-2021<br /><table><table><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_迷路5.png" /></td><td>迷路 (37%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_創傷8.png" /></td><td>創傷 (23%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_墜谷墜崖11.png" /></td><td>墜谷(墜崖) (11%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_疾病4.png" /></td><td>疾病 (11%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_高山症6.png" /></td><td>高山症 (4%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_遲歸失聯12.png" /></td><td>遲歸(失聯) (3%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_疲勞3.png" /></td><td>疲勞 (3%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_其他2.png" /></td><td>其他 (3%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_不明0.png" /></td><td>不明 (2%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_落石9.png" /></td><td>落石 (1%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_動物或昆蟲攻擊7.png" /></td><td>動物或昆蟲攻擊 (0.7%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_天候惡劣1.png" /></td><td>天候惡劣 (0.7%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_落雷10.png" /></td><td>落雷 (0.2%)</td></tr></table></table>', layer: layer_MtAccident20192021_3},
+            {label: '台灣山域事故主因<br /><table><table><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_迷路5.png" /></td><td>迷路 (37%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_創傷8.png" /></td><td>創傷 (23%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_墜谷墜崖11.png" /></td><td>墜谷(墜崖) (11%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_疾病4.png" /></td><td>疾病 (11%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_高山症6.png" /></td><td>高山症 (4%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_遲歸失聯12.png" /></td><td>遲歸(失聯) (3%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_疲勞3.png" /></td><td>疲勞 (3%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_其他2.png" /></td><td>其他 (3%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_不明0.png" /></td><td>不明 (2%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_落石9.png" /></td><td>落石 (1%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_動物或昆蟲攻擊7.png" /></td><td>動物或昆蟲攻擊 (0.7%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_天候惡劣1.png" /></td><td>天候惡劣 (0.7%)</td></tr><tr><td style="text-align: center;"><img src="legend/MtAccident20192021_3_落雷10.png" /></td><td>落雷 (0.2%)</td></tr></table></table>', layer: layer_MtAccident20192021_3},
             {label: "Google Terrain Hybrid", layer: layer_GoogleTerrainHybrid_2},
             {label: "Google Satellite Hybrid", layer: layer_GoogleSatelliteHybrid_1},
             {label: "OpenStreetMap", layer: layer_OpenStreetMap_0, radioGroup: 'bm' },]
